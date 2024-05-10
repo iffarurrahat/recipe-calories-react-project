@@ -1,0 +1,80 @@
+[
+  {
+    "recipe_id": 1,
+    "recipe_image": "https://i.ibb.co/zR44Fq7/spaghetti-bolognese.png",
+    "recipe_name": "Spaghetti Bolognese",
+    "short_description": "Classic Italian pasta dish with savory meat sauce.",
+    "ingredients": [
+      "500g ground beef",
+      "1 onion, chopped",
+      "3 cloves garlic, minced"
+    ],
+    "preparing_time": 45,
+    "calories": 450
+  },
+  {
+    "recipe_id": 2,
+    "recipe_image": "https://i.ibb.co/2WbjJPj/chicken-caesar-salad.png",
+    "recipe_name": "Chicken Caesar Salad",
+    "short_description": "A delicious and healthy salad with grilled chicken and Caesar dressing.",
+    "ingredients": [
+      "550g chicken breast, grilled and sliced",
+      "200g romaine lettuce, chopped",
+      "1 cup croutons"
+    ],
+    "preparing_time": 20,
+    "calories": 320
+  },
+  {
+    "recipe_id": 3,
+    "recipe_image": "chocolate_cake.jpg",
+    "recipe_name": "Chocolate Cake",
+    "short_description": "Decadent chocolate cake with creamy frosting.",
+    "ingredients": [
+      "2 cups all-purpose flour",
+      "1 3/4 cups granulated sugar",
+      "3/4 cup unsweetened cocoa powder"
+    ],
+    "preparing_time": 55,
+    "calories": 380
+  },
+  {
+    "recipe_id": 4,
+    "recipe_image": "vegetable_stir_fry.jpg",
+    "recipe_name": "Vegetable Stir-Fry",
+    "short_description": "Quick and healthy stir-fried vegetables with a savory sauce.",
+    "ingredients": [
+      "1 red bell pepper, sliced",
+      "1 green bell pepper, sliced",
+      "1 yellow bell pepper, sliced"
+    ],
+    "preparing_time": 25,
+    "calories": 220
+  },
+  {
+    "recipe_id": 5,
+    "recipe_image": "grilled_salmon.jpg",
+    "recipe_name": "Grilled Salmon",
+    "short_description": "Healthy and flavorful grilled salmon fillets.",
+    "ingredients": [
+      "4 salmon fillets",
+      "2 tbsp olive oil",
+      "2 cloves garlic, minced"
+    ],
+    "preparing_time": 15,
+    "calories": 280
+  },
+  {
+    "recipe_id": 6,
+    "recipe_image": "vegetarian_pizza.jpg",
+    "recipe_name": "Vegetarian Pizza",
+    "short_description": "Homemade pizza topped with fresh vegetables and cheese.",
+    "ingredients": [
+      "1 pizza dough (store-bought or homemade)",
+      "1/2 cup pizza sauce",
+      "1 cup shredded mozzarella cheese"
+    ],
+    "preparing_time": 30,
+    "calories": 320
+  }
+]

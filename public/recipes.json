@@ -27,7 +27,7 @@
   },
   {
     "recipe_id": 3,
-    "recipe_image": "chocolate_cake.jpg",
+    "recipe_image": "https://i.ibb.co/m0JHgbQ/chocolate-cake.png",
     "recipe_name": "Chocolate Cake",
     "short_description": "Decadent chocolate cake with creamy frosting.",
     "ingredients": [
@@ -40,7 +40,7 @@
   },
   {
     "recipe_id": 4,
-    "recipe_image": "vegetable_stir_fry.jpg",
+    "recipe_image": "https://i.ibb.co/qWtm8yw/vegetable-stirfry.png",
     "recipe_name": "Vegetable Stir-Fry",
     "short_description": "Quick and healthy stir-fried vegetables with a savory sauce.",
     "ingredients": [
@@ -53,7 +53,7 @@
   },
   {
     "recipe_id": 5,
-    "recipe_image": "grilled_salmon.jpg",
+    "recipe_image": "https://i.ibb.co/847pmtB/grilled-salmon.png",
     "recipe_name": "Grilled Salmon",
     "short_description": "Healthy and flavorful grilled salmon fillets.",
     "ingredients": [
@@ -66,7 +66,7 @@
   },
   {
     "recipe_id": 6,
-    "recipe_image": "vegetarian_pizza.jpg",
+    "recipe_image": "https://i.ibb.co/kM3P2nx/vegetarian-pizza.png",
     "recipe_name": "Vegetarian Pizza",
     "short_description": "Homemade pizza topped with fresh vegetables and cheese.",
     "ingredients": [

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const RecipeCard = ({ recipe }) => {
   const {
     recipe_image,
@@ -7,7 +9,7 @@ const RecipeCard = ({ recipe }) => {
     preparing_time,
     calories,
   } = recipe;
-  //   console.log(recipe);
+
   return (
     <div className="border p-6 rounded-2xl">
       <img
@@ -37,4 +39,7 @@ const RecipeCard = ({ recipe }) => {
   );
 };
 
+RecipeCard.propTypes = {
+  recipe: PropTypes.object.isRequired,
+};
 export default RecipeCard;

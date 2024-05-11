@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, handleRecipes }) => {
   const {
     recipe_image,
     recipe_name,
@@ -32,7 +32,10 @@ const RecipeCard = ({ recipe }) => {
         <p>{preparing_time} minutes</p>
         <p>{calories} calories</p>
       </div>
-      <button className="bg-green-400 mt-6 px-5 py-3 rounded-3xl">
+      <button
+        onClick={() => handleRecipes(recipe)}
+        className="bg-green-400 mt-6 px-5 py-3 rounded-3xl"
+      >
         Want to Cook
       </button>
     </div>
@@ -41,5 +44,6 @@ const RecipeCard = ({ recipe }) => {
 
 RecipeCard.propTypes = {
   recipe: PropTypes.object.isRequired,
+  handleRecipes: PropTypes.func.isRequired,
 };
 export default RecipeCard;

@@ -25,13 +25,11 @@ const Recipes = () => {
     const duplicateBtn = addNewRecipe.find(
       (item) => item.recipe_id === recipe.recipe_id
     );
-    console.log(duplicateBtn);
     if (duplicateBtn) {
       return toast.error("Already this item is exist in cook", {
         icon: <AiOutlineWarning className="text-xl text-yellow-400" />,
         duration: 2000,
       });
-      // IoIosWarning
     }
 
     const newRecipe = [...addNewRecipe, recipe];

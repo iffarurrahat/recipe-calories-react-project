@@ -3,7 +3,7 @@ import RecipeCard from "./RecipeCard";
 import CookingItems from "./CookingItems";
 import toast from "react-hot-toast";
 import { AiOutlineWarning } from "react-icons/ai";
-import { addToLS } from "../utilites/localstorage";
+import { addToLS, getStoredCart } from "../utilites/localstorage";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -21,6 +21,19 @@ const Recipes = () => {
     };
     loadRecipes();
   }, []);
+
+  // local storage effect
+  useEffect(() => {
+    const storedCartId = getStoredCart();
+    const saveCart = [];
+    if (recipes.length) {
+      for (const id of storedCartId) {
+        const recipe = recipes.find((item) => item.recipe_id === id);
+        saveCart.push(recipe);
+      }
+    }
+    setAddNewRecipe(saveCart);
+  }, [recipes]);
 
   const handleRecipes = (recipe) => {
     const duplicateBtn = addNewRecipe.find(

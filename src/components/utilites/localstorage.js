@@ -1,3 +1,4 @@
+// <-!----- want to cook: part
 const getStoredCart = () => {
   const storeCartString = localStorage.getItem("cart");
   if (storeCartString) {
@@ -24,7 +25,7 @@ const removeFromLS = (id) => {
   saveCartToLS(remaining);
 };
 
-// <-!----- current cooking
+// <-!----- current cooking: part
 const getStoredCartForCurrentCooking = () => {
   const storeCartString = localStorage.getItem("currentCooking");
   if (storeCartString) {

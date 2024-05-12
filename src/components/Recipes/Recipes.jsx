@@ -15,8 +15,6 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [addNewRecipe, setAddNewRecipe] = useState([]);
   const [currentRecipes, setCurrentRecipes] = useState([]);
-  const [sumOfPreparingTime, setSumOfPreparingTime] = useState(0);
-  const [sumOfCalories, setSumOfCalories] = useState(0);
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -31,7 +29,7 @@ const Recipes = () => {
     loadRecipes();
   }, []);
 
-  // local storage effect: Want to cook part
+  //<-!---- local storage effect: Want to cook part
   useEffect(() => {
     const storedCartId = getStoredCart();
     const saveCart = [];
@@ -61,15 +59,7 @@ const Recipes = () => {
   };
 
   // current cooking handler
-  const handleCurrentlyCook = (id, time, calories) => {
-    console.log("time-->", calories);
-
-    const newPreparingTime = sumOfPreparingTime + time;
-    setSumOfPreparingTime(newPreparingTime);
-
-    const newCalories = sumOfCalories + calories;
-    setSumOfCalories(newCalories);
-
+  const handleCurrentlyCook = (id) => {
     const remainingRecipes = addNewRecipe.filter(
       (recipe) => recipe.recipe_id !== id
     );
@@ -81,7 +71,7 @@ const Recipes = () => {
     addToLSForCurrentCooking(id);
   };
 
-  // local storage effect: current cooking
+  //<-!---- local storage effect: current cooking
   useEffect(() => {
     const storedCartCurrentCookingId = getStoredCartForCurrentCooking();
     const saveCart = [];
@@ -91,9 +81,6 @@ const Recipes = () => {
     }
     setCurrentRecipes(saveCart);
   }, [addNewRecipe.length, recipes]);
-
-  // console.log("addNew Recipe--->", addNewRecipe);
-  // console.log("current Recipes--->", currentRecipes);
 
   return (
     <div className="mt-12 md:mt-24">
@@ -125,8 +112,6 @@ const Recipes = () => {
             addNewRecipe={addNewRecipe}
             handleCurrentlyCook={handleCurrentlyCook}
             currentRecipes={currentRecipes}
-            sumOfPreparingTime={sumOfPreparingTime}
-            sumOfCalories={sumOfCalories}
           />
         </div>
       </div>

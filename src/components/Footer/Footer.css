@@ -1,0 +1,19 @@
+.footer {
+  background-color: #0d1824;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.footer::after {
+  position: absolute;
+  top: -300px;
+  left: -100px;
+  width: 800px;
+  height: 800px;
+  content: "";
+  background: url(../../assets/footer-bg.svg);
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.05;
+}

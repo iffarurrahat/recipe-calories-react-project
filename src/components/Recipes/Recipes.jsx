@@ -3,6 +3,7 @@ import RecipeCard from "./RecipeCard";
 import CookingItems from "./CookingItems";
 import toast from "react-hot-toast";
 import { AiOutlineWarning } from "react-icons/ai";
+import { addToLS } from "../utilites/localstorage";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -34,6 +35,7 @@ const Recipes = () => {
 
     const newRecipe = [...addNewRecipe, recipe];
     setAddNewRecipe(newRecipe);
+    addToLS(recipe.recipe_id);
   };
 
   return (

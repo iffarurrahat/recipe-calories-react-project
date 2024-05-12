@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { FaRegClock } from "react-icons/fa6";
+import { SlFire } from "react-icons/sl";
 
 const RecipeCard = ({ recipe, handleRecipes }) => {
   const {
@@ -15,11 +17,13 @@ const RecipeCard = ({ recipe, handleRecipes }) => {
       <img
         src={recipe_image}
         alt={recipe_name}
-        className="rounded-2xl w-full mb-6"
+        className="rounded-2xl w-full h-48 md:h-60 lg:h-48 mb-6"
       />
       <h4 className="text-xl font-medium">{recipe_name}</h4>
       <p className="text-[#878787] my-4">{short_description}</p>
-      <p className="text-lg font-medium mb-2">Ingredients: 6</p>
+      <p className="text-lg font-medium mb-2">
+        Ingredients: {ingredients.length}
+      </p>
       <ul className="text-[#878787]">
         {ingredients.map((item, idx) => (
           <li key={idx} className="list-disc ml-5 text-sm">
@@ -29,8 +33,12 @@ const RecipeCard = ({ recipe, handleRecipes }) => {
       </ul>
       <hr className="my-3" />
       <div className="flex gap-10 text-[#878787]">
-        <p>{preparing_time} minutes</p>
-        <p>{calories} calories</p>
+        <p className="flex items-center gap-2">
+          <FaRegClock /> {preparing_time} minutes
+        </p>
+        <p className="flex items-center gap-2">
+          <SlFire /> {calories} calories
+        </p>
       </div>
       <button
         onClick={() => handleRecipes(recipe)}

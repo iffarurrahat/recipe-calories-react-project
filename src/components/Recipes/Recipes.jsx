@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import CookingItems from "./CookingItems";
+import toast from "react-hot-toast";
+import { AiOutlineWarning } from "react-icons/ai";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -20,6 +22,18 @@ const Recipes = () => {
   }, []);
 
   const handleRecipes = (recipe) => {
+    const duplicateBtn = addNewRecipe.find(
+      (item) => item.recipe_id === recipe.recipe_id
+    );
+    console.log(duplicateBtn);
+    if (duplicateBtn) {
+      return toast.error("Already this item is exist in cook", {
+        icon: <AiOutlineWarning className="text-xl text-yellow-400" />,
+        duration: 2000,
+      });
+      // IoIosWarning
+    }
+
     const newRecipe = [...addNewRecipe, recipe];
     setAddNewRecipe(newRecipe);
   };

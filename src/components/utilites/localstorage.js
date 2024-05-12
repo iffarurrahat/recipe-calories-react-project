@@ -24,4 +24,32 @@ const removeFromLS = (id) => {
   saveCartToLS(remaining);
 };
 
-export { addToLS, getStoredCart, removeFromLS };
+// <-!----- current cooking
+const getStoredCartForCurrentCooking = () => {
+  const storeCartString = localStorage.getItem("currentCooking");
+  if (storeCartString) {
+    return JSON.parse(storeCartString);
+  }
+  return [];
+};
+
+const saveCartToLSForCurrentCooking = (currentCooking) => {
+  const cartStringified = JSON.stringify(currentCooking);
+  localStorage.setItem("currentCooking", cartStringified);
+};
+
+const addToLSForCurrentCooking = (id) => {
+  const cart = getStoredCartForCurrentCooking();
+  cart.push(id);
+  // save cart to localStorage
+  saveCartToLSForCurrentCooking(cart);
+};
+
+export {
+  addToLS,
+  getStoredCart,
+  removeFromLS,
+  getStoredCartForCurrentCooking,
+  saveCartToLSForCurrentCooking,
+  addToLSForCurrentCooking,
+};

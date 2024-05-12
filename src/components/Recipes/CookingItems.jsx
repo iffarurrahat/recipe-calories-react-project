@@ -1,5 +1,9 @@
 import PropTypes from "prop-types";
-const CookingItems = ({ addNewRecipe, handleCurrentlyCook }) => {
+const CookingItems = ({
+  addNewRecipe,
+  handleCurrentlyCook,
+  currentRecipes,
+}) => {
   return (
     <>
       {/* Want to cook: part */}
@@ -55,7 +59,7 @@ const CookingItems = ({ addNewRecipe, handleCurrentlyCook }) => {
       {/* Currently cooking: part */}
       <div className="mt-8">
         <h2 className="text-2xl font-medium text-center">
-          Currently cooking: 02
+          Currently cooking: {currentRecipes.length}
         </h2>
         <p className="h-[1px] w-4/5 bg-[#28282826] mx-auto mt-4 mb-6"></p>
         <div className="overflow-x-auto">
@@ -70,13 +74,14 @@ const CookingItems = ({ addNewRecipe, handleCurrentlyCook }) => {
               </tr>
             </thead>
             <tbody>
-              {/* row 1 */}
-              <tr className="bg-base-200">
-                <th>1</th>
-                <td>Spaghetti Bolognese</td>
-                <td>30 minutes</td>
-                <td>600 calories</td>
-              </tr>
+              {currentRecipes.map((recipe, idx) => (
+                <tr key={idx} className="bg-base-200">
+                  <th>{idx + 1}</th>
+                  <td>{recipe?.recipe_name}</td>
+                  <td>{recipe?.preparing_time} minutes</td>
+                  <td>{recipe?.calories} calories</td>
+                </tr>
+              ))}
               <tr className="">
                 <th></th>
                 <td></td>
@@ -94,5 +99,6 @@ const CookingItems = ({ addNewRecipe, handleCurrentlyCook }) => {
 CookingItems.propTypes = {
   addNewRecipe: PropTypes.array.isRequired,
   handleCurrentlyCook: PropTypes.func.isRequired,
+  currentRecipes: PropTypes.array.isRequired,
 };
 export default CookingItems;

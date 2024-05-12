@@ -3,11 +3,18 @@ import RecipeCard from "./RecipeCard";
 import CookingItems from "./CookingItems";
 import toast from "react-hot-toast";
 import { AiOutlineWarning } from "react-icons/ai";
-import { addToLS, getStoredCart, removeFromLS } from "../utilites/localstorage";
+import {
+  addToLS,
+  addToLSForCurrentCooking,
+  getStoredCart,
+  getStoredCartForCurrentCooking,
+  removeFromLS,
+} from "../utilites/localstorage";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [addNewRecipe, setAddNewRecipe] = useState([]);
+  const [currentRecipes, setCurrentRecipes] = useState([]);
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -22,7 +29,7 @@ const Recipes = () => {
     loadRecipes();
   }, []);
 
-  // local storage effect
+  // local storage effect: Want to cook part
   useEffect(() => {
     const storedCartId = getStoredCart();
     const saveCart = [];
@@ -51,12 +58,8 @@ const Recipes = () => {
     addToLS(recipe.recipe_id);
   };
 
-  //
+  // current cooking handler
   const handleCurrentlyCook = (id) => {
-    // addToLS(id);
-
-    // console.log("click-->", id);
-
     const remainingRecipes = addNewRecipe.filter(
       (recipe) => recipe.recipe_id !== id
     );
@@ -64,7 +67,23 @@ const Recipes = () => {
 
     // remove from LS
     removeFromLS(id);
+
+    addToLSForCurrentCooking(id);
   };
+
+  // local storage effect: current cooking
+  useEffect(() => {
+    const storedCartCurrentCookingId = getStoredCartForCurrentCooking();
+    const saveCart = [];
+    for (const id of storedCartCurrentCookingId) {
+      const recipe = recipes.find((item) => item.recipe_id === id);
+      saveCart.push(recipe);
+    }
+    setCurrentRecipes(saveCart);
+  }, [addNewRecipe.length, recipes]);
+
+  // console.log("addNew Recipe--->", addNewRecipe);
+  // console.log("current Recipes--->", currentRecipes);
 
   return (
     <div className="mt-12 md:mt-24">
@@ -95,6 +114,7 @@ const Recipes = () => {
           <CookingItems
             addNewRecipe={addNewRecipe}
             handleCurrentlyCook={handleCurrentlyCook}
+            currentRecipes={currentRecipes}
           />
         </div>
       </div>

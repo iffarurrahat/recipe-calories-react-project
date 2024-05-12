@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 const CookingItems = ({ addNewRecipe }) => {
-  console.log(addNewRecipe);
+  console.log(addNewRecipe.length);
   return (
     <>
       <div>
         <h2 className="text-2xl font-medium text-center mt-6">
-          Want to cook: 01
+          Want to cook: {addNewRecipe.length}
         </h2>
         <p className="h-[1px] w-4/5 bg-[#28282826] mx-auto mt-4 mb-6"></p>
         <div className="overflow-x-auto">
@@ -19,11 +19,11 @@ const CookingItems = ({ addNewRecipe }) => {
                 <th>Calories</th>
               </tr>
             </thead>
-            <tbody>
-              {/* row 1 */}
-              {addNewRecipe.length ? (
-                addNewRecipe.map((item, idx) => (
-                  <tr key={idx} className="bg-base-200">
+            {/* row 1 */}
+            {addNewRecipe.length ? (
+              addNewRecipe.map((item, idx) => (
+                <tbody key={idx}>
+                  <tr className="bg-base-200">
                     <th>{idx + 1}</th>
                     <td>{item.recipe_name}</td>
                     <td>{item.preparing_time} minutes</td>
@@ -34,11 +34,17 @@ const CookingItems = ({ addNewRecipe }) => {
                       </button>
                     </td>
                   </tr>
-                ))
-              ) : (
-                <p className="bg-red-300">Add you want to cook item</p>
-              )}
-            </tbody>
+                </tbody>
+              ))
+            ) : (
+              <tbody>
+                <tr className="bg-base-200">
+                  <th colSpan={5} className="text-center text-green-400">
+                    You want to cooking button click
+                  </th>
+                </tr>
+              </tbody>
+            )}
           </table>
         </div>
       </div>

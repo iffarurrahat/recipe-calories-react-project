@@ -3,7 +3,7 @@ import RecipeCard from "./RecipeCard";
 import CookingItems from "./CookingItems";
 import toast from "react-hot-toast";
 import { AiOutlineWarning } from "react-icons/ai";
-import { addToLS, getStoredCart } from "../utilites/localstorage";
+import { addToLS, getStoredCart, removeFromLS } from "../utilites/localstorage";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -51,6 +51,21 @@ const Recipes = () => {
     addToLS(recipe.recipe_id);
   };
 
+  //
+  const handleCurrentlyCook = (id) => {
+    // addToLS(id);
+
+    // console.log("click-->", id);
+
+    const remainingRecipes = addNewRecipe.filter(
+      (recipe) => recipe.recipe_id !== id
+    );
+    setAddNewRecipe(remainingRecipes);
+
+    // remove from LS
+    removeFromLS(id);
+  };
+
   return (
     <div className="mt-12 md:mt-24">
       <div className="text-center mb-8 md:mb-12">
@@ -71,12 +86,16 @@ const Recipes = () => {
                 key={recipe.recipe_id}
                 recipe={recipe}
                 handleRecipes={handleRecipes}
+                handleCurrentlyCook={handleCurrentlyCook}
               />
             ))}
           </div>
         </div>
         <div className="lg:w-2/5 h-fit border rounded-xl">
-          <CookingItems addNewRecipe={addNewRecipe} />
+          <CookingItems
+            addNewRecipe={addNewRecipe}
+            handleCurrentlyCook={handleCurrentlyCook}
+          />
         </div>
       </div>
     </div>

@@ -15,6 +15,8 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [addNewRecipe, setAddNewRecipe] = useState([]);
   const [currentRecipes, setCurrentRecipes] = useState([]);
+  const [sumOfPreparingTime, setSumOfPreparingTime] = useState(0);
+  const [sumOfCalories, setSumOfCalories] = useState(0);
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -59,7 +61,15 @@ const Recipes = () => {
   };
 
   // current cooking handler
-  const handleCurrentlyCook = (id) => {
+  const handleCurrentlyCook = (id, time, calories) => {
+    console.log("time-->", calories);
+
+    const newPreparingTime = sumOfPreparingTime + time;
+    setSumOfPreparingTime(newPreparingTime);
+
+    const newCalories = sumOfCalories + calories;
+    setSumOfCalories(newCalories);
+
     const remainingRecipes = addNewRecipe.filter(
       (recipe) => recipe.recipe_id !== id
     );
@@ -115,6 +125,8 @@ const Recipes = () => {
             addNewRecipe={addNewRecipe}
             handleCurrentlyCook={handleCurrentlyCook}
             currentRecipes={currentRecipes}
+            sumOfPreparingTime={sumOfPreparingTime}
+            sumOfCalories={sumOfCalories}
           />
         </div>
       </div>

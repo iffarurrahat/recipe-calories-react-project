@@ -3,6 +3,8 @@ const CookingItems = ({
   addNewRecipe,
   handleCurrentlyCook,
   currentRecipes,
+  sumOfPreparingTime,
+  sumOfCalories,
 }) => {
   return (
     <>
@@ -34,7 +36,13 @@ const CookingItems = ({
                     <td>{item?.calories} calories</td>
                     <td>
                       <button
-                        onClick={() => handleCurrentlyCook(item.recipe_id)}
+                        onClick={() =>
+                          handleCurrentlyCook(
+                            item.recipe_id,
+                            item.preparing_time,
+                            item.calories
+                          )
+                        }
                         className="bg-green-400 p-1 lg:p-2 rounded-2xl"
                       >
                         Preparing
@@ -85,8 +93,8 @@ const CookingItems = ({
               <tr className="">
                 <th></th>
                 <td></td>
-                <td>Total Time = 45 minutes</td>
-                <td>Total Calories = 1050 calories</td>
+                <td>Total Time = {sumOfPreparingTime} minutes</td>
+                <td>Total Calories = {sumOfCalories} calories</td>
               </tr>
             </tbody>
           </table>
@@ -100,5 +108,7 @@ CookingItems.propTypes = {
   addNewRecipe: PropTypes.array.isRequired,
   handleCurrentlyCook: PropTypes.func.isRequired,
   currentRecipes: PropTypes.array.isRequired,
+  sumOfPreparingTime: PropTypes.number.isRequired,
+  sumOfCalories: PropTypes.number.isRequired,
 };
 export default CookingItems;

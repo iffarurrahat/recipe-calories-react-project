@@ -12,7 +12,7 @@ const OurNewsletter = () => {
           Fusce id velit placerat, efficitur libero placerat, sodales ante.
           Curabitur sed erosat orci congue vestibulum.
         </p>
-        <button className="bg-green-400 py-2 px-6 rounded-full">
+        <button className="bg-green-400 py-3 px-8 rounded-full">
           Subscribe
         </button>
       </Container>

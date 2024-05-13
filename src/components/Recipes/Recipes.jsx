@@ -89,9 +89,9 @@ const Recipes = () => {
           Our Recipes
         </h1>
         <p className="lg:w-2/3 mx-auto mt-3 md:mt-6">
-          Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus
-          vulputate netus pharetra rhoncus. Eget urna volutpat curabitur
-          elementum mauris aenean neque.{" "}
+          Our Calories recipe? Track down the recipe is details! Most recipes
+          list calorie counts per serving. If not, use online tools with your
+          ingredients for an estimate.
         </p>
       </div>
       <div className="flex flex-col-reverse lg:flex-row gap-6">

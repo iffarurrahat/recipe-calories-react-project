@@ -65,7 +65,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="lg:pl-16">
             <h2 className="text-xl md:text-2xl font-light">Quick Links</h2>
             <p className="h-1 w-10 bg-green-400 mt-1"></p>
             <div className="mt-4 leading-10 list-none">

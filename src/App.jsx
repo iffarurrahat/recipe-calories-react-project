@@ -3,6 +3,7 @@ import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Recipes from "./components/Recipes/Recipes";
+import RecipesCategory from "./components/RecipesCategory/RecipesCategory";
 import Container from "./components/ui/Container";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Header />
         <Banner />
         <Recipes />
+        <RecipesCategory />
       </Container>
       <Footer />
     </>

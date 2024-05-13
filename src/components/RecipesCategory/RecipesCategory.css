@@ -1,0 +1,20 @@
+.category {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.category_gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.35) 60%,
+    rgba(0, 0, 0, 0) 100%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding: 70px 20px 20px;
+}

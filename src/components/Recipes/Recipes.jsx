@@ -68,6 +68,8 @@ const Recipes = () => {
     // remove from LS
     removeFromLS(id);
 
+    toast.success("Prepared you want cook item");
+
     addToLSForCurrentCooking(id);
   };
 

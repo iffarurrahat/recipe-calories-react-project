@@ -17,7 +17,7 @@ const RecipeCard = ({ recipe, handleRecipes }) => {
       <img
         src={recipe_image}
         alt={recipe_name}
-        className="rounded-2xl w-full h-48 md:h-60 lg:h-48 mb-6"
+        className="rounded-2xl w-full h-48 sm:h-80 md:h-60 lg:h-48 mb-6"
       />
       <h4 className="text-xl font-medium">{recipe_name}</h4>
       <p className="text-[#878787] my-4">{short_description}</p>

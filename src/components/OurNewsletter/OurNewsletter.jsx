@@ -3,7 +3,7 @@ import "./OurNewsletter.css";
 
 const OurNewsletter = () => {
   return (
-    <div className="newsLatterBgImg h-96 md:h-[500px] mt-20 flex items-center text-white">
+    <div className="newsLatterBgImg h-96 md:h-[500px] w-full mt-20 flex items-center text-white">
       <Container>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
           Subscribe to our Newsletter

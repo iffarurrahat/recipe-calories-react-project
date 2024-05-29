@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/gMgw6Sf/mack-soto.jpg",
+    "reviewer_name": "Jane Doe",
+    "recipe_name": "Quinoa Salad",
+    "review_details": "I love how tasty this quinoa salad is! And it's surprisingly low in calories, perfect for my diet."
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/HqcDmds/ab-murad.jpg",
+    "reviewer_name": "John Smith",
+    "recipe_name": "Grilled Chicken Breast",
+    "review_details": "Grilled chicken breast is a staple in my diet. This recipe has helped me maintain my calorie goals without sacrificing flavor."
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/8cCM9Tn/john-deo.jpg",
+    "reviewer_name": "Alice Johnson",
+    "recipe_name": "Roasted Vegetable Medley",
+    "review_details": "As a vegetarian, finding low-calorie options can be challenging. This roasted vegetable medley is not only nutritious but also satisfyingly low in calories."
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/yqQPNPs/user-3.jpg",
+    "reviewer_name": "Mark Davis",
+    "recipe_name": "Quinoa Stuffed Bell Peppers",
+    "review_details": "These quinoa stuffed bell peppers are a hit in my household. It's amazing how flavorful they are while still being calorie-conscious."
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/TMTf6wG/rif.jpg",
+    "reviewer_name": "Emily Brown",
+    "recipe_name": "Zucchini Noodles with Pesto",
+    "review_details": "Zucchini noodles with pesto have become my go-to comfort food. It's a guilt-free indulgence that satisfies my cravings without breaking my calorie bank."
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/wgSCYTr/sayed-safi.jpg",
+    "reviewer_name": "Michael White",
+    "recipe_name": "Greek Yogurt Parfait",
+    "review_details": "This Greek yogurt parfait is a delicious way to start my day. It's light, refreshing, and surprisingly low in calories."
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/X4MnrXj/zahida-sultana.jpg",
+    "reviewer_name": "Sarah Adams",
+    "recipe_name": "Salmon and Asparagus Foil Packs",
+    "review_details": "Salmon and asparagus foil packs are my go-to dinner when I'm watching my calorie intake. It's simple to make and packed with flavor."
+  }
+]

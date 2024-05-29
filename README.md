@@ -8,8 +8,10 @@ Using Package /Tools:
 - React Icons
 - React Hot Toast
 - React PropTypes
+- Swiper Slider
 - Tailwind CSS
 - DaisyUI
+- Local Storage
 
 Using FontFamily:
 

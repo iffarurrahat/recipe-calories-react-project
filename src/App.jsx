@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import OurNewsletter from "./components/OurNewsletter/OurNewsletter";
 import Recipes from "./components/Recipes/Recipes";
 import RecipesCategory from "./components/RecipesCategory/RecipesCategory";
+import Testimonial from "./components/Testimonial/Testimonial";
 import Container from "./components/ui/Container";
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
         <Header />
         <Banner />
         <Recipes />
-        <RecipesCategory />
       </Container>
       <OurNewsletter />
+      <RecipesCategory />
+      <Testimonial />
       <Footer />
     </>
   );
